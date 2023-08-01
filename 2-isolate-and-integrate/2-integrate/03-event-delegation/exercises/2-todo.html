@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Todo</title>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo</title>
+  </head>
 
-    <body>
-        <main id="user-interface">
-            <ul id="list">
-                <li><button>X</button><input value="start coding" /></li>
-                <li><button>X</button><input value="stop coding" /></li>
-                <li><button id="add-todo-button">+</button></li>
-            </ul>
-        </main>
+  <body>
+    <main id="user-interface">
+      <ul id="list">
+        <li><button>X</button><input value="To do" /></li>
+        <li><button>X</button><input value="To do" /></li>
+        <li><button id="add-todo-button">+</button></li>
+      </ul>
+    </main>
 
-        <script id="handlers">
-            const deleteTodoHandler = (event) => {
-                debugger;
-                const target = _;
-                if (target._ === 'BUTTON' && target._ === 'X') {
-                    const liToRemove = _.parentElement;
-                    const todoList = document.getElementById(_);
-                    todoList._(liToRemove);
-                }
-            };
+    <script id="handlers">
+      const deleteTodoHandler = (event) => {
+        const target = event.target;
+        if (target.nodeName === "BUTTON" && target.innerHTML === "X") {
+          const liToRemove = target.parentElement;
+          const todoList = document.getElementById("list");
+          todoList.removeChild(liToRemove);
+        }
+      };
 
-            const addTodoHandler = (event) => {
-                debugger;
+      const addTodoHandler = (event) => {
+        const newLi = document.createElement("li");
 
-                const newLi = document.createElement(_);
-                const newButton = document.createElement(_);
-                newButton.innerHTML = '_';
-                newLi.appendChild(newButton);
-                const newInput = document.createElement(_);
-                newLi.appendChild(newInput);
+        const newButtonX = document.createElement("button");
+        newButtonX.innerHTML = "X";
+        newButtonX.className = "delete-todo-button";
+        newButtonX.addEventListener("click", deleteTodoHandler);
+        newLi.appendChild(newButtonX);
 
-                const addButton = event._;
-                const addButtonParent = addButton._;
-                const todoList = addButtonParent._;
-                todoList.insertBefore(_, _);
-            };
-        </script>
+        const newInput = document.createElement("input");
+        newInput.value = "To do";
+        newLi.appendChild(newInput);
 
-        <script id=" listeners">
-            document.getElementById(_).addEventListener('click', _);
+        const todoList = document.getElementById("list");
+        addTodoButton = document.getElementById("add-todo-button");
+        todoList.insertBefore(newLi, addTodoButton.parentElement);
+      };
+    </script>
 
-            document.getElementById(_).addEventListener('click', _);
-        </script>
-    </body>
+    <script id=" listeners">
+      document
+        .getElementById("list")
+        .addEventListener("click", deleteTodoHandler);
+
+      document
+        .getElementById("add-todo-button")
+        .addEventListener("click", addTodoHandler);
+    </script>
+  </body>
 </html>

@@ -1,3 +1,3 @@
-// import { reverseAndUpper } from './utils.js';
+import { reverseAndUpper } from './utils.js';
 
-export const reverseAndUpperHandler = _;
+export const reverseAndUpperHandler = reverseAndUpper();

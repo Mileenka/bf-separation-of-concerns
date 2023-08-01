@@ -1,14 +1,18 @@
 'use strict';
 
-// fill in the _s
-
 const buttonEl = document.createElement('button');
 buttonEl.innerHTML = 'are you honest?';
 console.log(buttonEl.nodeName, buttonEl.cloneNode(true));
 
 const truthTestHandler = () => {
-    // ask a user to confirm if they are honest
+  // ask a user to confirm if they are honest
+  let user = confirm('Are you honest? yes/no');
+  if (user === true) {
     // let them know what you think of their answer
+    alert('Thats great !');
+  } else {
+    alert('You are liar !');
+  }
 };
 
 buttonEl.addEventListener('click', truthTestHandler);

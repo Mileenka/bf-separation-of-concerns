@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { paragraph } from './paragraph.js';
+import  paragraph  from './paragraph.js';
 
 describe('paragraph: renders a paragraph with optional styling', () => {
     describe('"lorem ipsum", no classes', () => {
@@ -65,7 +65,7 @@ describe('paragraph: renders a paragraph with optional styling', () => {
             expect(actual.tagName).toEqual('P');
         });
         it('has text: "hello user"', () => {
-            expect(actual.innerText).toEqual('hello user');
+            expect(actual.innerHTML).toEqual('hello user');
         });
         it('has classList length 1', () => {
             expect(actual.classList).toHaveLength(1);
@@ -85,7 +85,7 @@ describe('paragraph: renders a paragraph with optional styling', () => {
             expect(actual.tagName).toEqual('P');
         });
         it('has text: "hello user"', () => {
-            expect(actual.innerText).toEqual('hello user');
+            expect(actual.innerHTML).toEqual('hello user');
         });
         it('has className: ""', () => {
             expect(actual.className).toEqual('');
